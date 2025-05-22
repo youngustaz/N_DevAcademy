@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <!-- ✅ Bootstrap CSS -->
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+                <!-- ✅ Google Fonts -->
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong|Ubuntu|LoraMerriweather|Open+Sans|Abril+Fatface|Poppins|Cinzel|Fauna+One|Oswald|Noto+Sans">
+
+                <!-- ✅ Custom CSS -->
+                <style>
+                body {
+                                background-color: lightgrey;
+                                background-size: cover;         /* Scales image to cover entire background */
+                                background-repeat: no-repeat;   /* Prevents image from repeating */
+                                background-position: center;
+                                background-attachment: fixed;   /*keeps the image from moving as you are going up or down */
+                                backdrop-filter: blur(1.5px);
+                                font-weight: bolder;
+                                font-family: Poppins, sans-serif;
+                                text-shadow: 0px 0px 1px white ;
+                        }
+
+                        .search-form {
+                                margin: 0;
+                                padding: 8px;
+                                align-items:center;
+                                display: flex;
+                        }
+                        .search-form input[type="text"] {
+                                padding: 10px 40px;
+                                font-family: Noto Sans, serif;
+                                border: none;
+                                border-radius: 4px 0 0 4px black;
+                        }
+                        .search-form button {
+                                padding: 10px 25px;
+                                background-color: darkblue;
+                                border: none;
+                                color: white;
+                                border-radius: 4px 0 0 4px black;
+                                cursor: pointer;
+                        }
+                        
+                        .search-form button:hover {
+                                background-color: blue;
+                        }
+
+                        .navbar {
+                                list-style-type: circle;
+                                margin: 0;
+                                font-family: Cinzel, serif;
+                                padding: 8px;
+                                overflow:hidden;
+                                align-items: center;
+                                background-color: lightblue;
+                                justify-content: space-between;
+                                display: flex;
+                        }
+                        .navbar-brand {
+                                font-family: 'Cinzel', serif;
+                        }
+
+                        .left-links, .righ-links {
+                                display: flex;
+                        }
+
+                        /* Menu items */
+                        .navbar li {
+                                flex: 0;
+                                list-style: none;
+                        }
+
+                        /* Menu links */
+                        .navbar li a {
+                                display: inline-block;
+                                color: black;
+                                text-align: center;
+                                padding: 08px 08px;
+                                text-decoration: none;
+                        }
+
+                        /* Active tab - green */
+                        .navbar li a.active {
+                                color: black;
+                        }
+
+                        .navbar li a:hover:not(.active) {
+                                background-color: darkblue;
+                        }
+
+                        /*list of courses*/
+                        .nav.horizontal {
+                                list-style-type: none;
+                                margin: 0;
+                                padding: 5px;
+                                font-family: Abril Fatface, serif;
+                                overflow:auto;
+                                align-items: left;
+                                background-color: grey;
+                                justify-content:space-between;
+                                display: flex;
+                        }
+                        /* Menu items */
+                        .nav.horizontal li {
+                                flex: 0;
+                                list-style: none;
+                        }
+
+                        /* Menu links */
+                        .nav.horizontal li a {
+                                display: inline-block;
+                                color: black;
+                                text-align: center;
+                                padding: 10px 10px;
+                                text-decoration: none;
+                        }
+
+                        /* Active tab - green */
+                        .nav.horizontal li a.active {
+                                color: black;
+                        }
+
+                        .nav.horizontal li a:hover:not(.active) {
+                                background-color: white;
+                        }
+
+                        h1 {
+                                font-family:Cinzel, serif;
+                                font-size: 40px;
+                                text-align: center;
+                                color: black;
+                                padding: 0px 0px 0px 0px ;
+                                text-shadow: 0.5px 0.5px 1px black ;
+                        }
+                        h2 {
+                                font: 10px;
+                                font-family: LoraMerriweather, sans-serif;
+                                margin: 0;
+                                padding: 0px;
+                                color: black;
+                                /*text-shadow: 1px 1px 2px darkblue, 0 0 2px midnightblue ;*/
+                                text-align: center;
+                        }
+                        h4 {
+                                font-size: 20px;
+                                font-family: Trirong, sans-serif;
+                                margin: auto;
+                                padding: 0 0 0 0 ;
+                                color: black;
+                                /*text-shadow: 1px 1px 2px darkblue, 0 0 2px midnightblue ;*/
+                                text-align: center;
+                        }
+                        a:link {
+                                text-decoration: none;
+                                color: blue;
+                        }
+                        a:visited {
+                                text-decoration: none;
+                                color: green;
+                        }
+                        a:hover {
+                                text-decoration: none;
+                                color: yellow;
+                        }
+                        a:active {
+                                text-decoration: none;
+                                color: red;
+                        }
+                        .footer {
+                                background-color: black;
+                                color: burlywood;
+                                padding: 20px 0;
+                                font-size: 14px;
+                                }
+
+                        .footer a {
+                                color: blue;
+                                text-decoration: none;
+                                margin-right: 15px;
+                        }
+
+                        .footer a:hover {
+                                color: #1e90ff;
+                        }
+
+                        .footer-container {
+                                max-width: 1000px;
+                                margin: 0 auto;
+                                padding: 0 20px;
+                                display: flex;
+                                justify-content: space-between;
+                                flex-wrap: wrap;
+                                background-color: lightblue;
+                        }
+
+                        .contact-info p {
+                                margin: 5px 0;
+                        }
+
+                        .social-links a {
+                                display: inline-block;
+                                margin: 5px 10px 5px 0;
+                                color: blue;
+                        }
+
+                        .course-btn {
+                                transition: all 0.3s ease;
+                        }
+
+                        .course-btn:hover {
+                                background-color: #1e90ff;
+                                color: white;
+                        }
+
+                        .course-btn.active {
+                                background-color: #0d6efd;
+                                color: white;
+                                border: 1px solid #0a58ca;
+                        }
+
+                        .feature-box {
+                                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                        }
+                                
+                        .feature-box:hover {
+                                transform: scale(1.05) translateY(-5px);
+                                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                        }
+                        .feature-box img {
+                                transition: transform 0.3s ease;
+                        }
+
+                        .feature-box img:hover {
+                                transform: scale(1.05); /* Adjust the scale as you like */
+                        }
+
+
+                </style>
+        </head>
+        <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+                        <a class="navbar-brand fw-bold text-primary fs-4" href="Developer Academy.html">
+                                Developer Academy
+                        </a>
+
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="mainNavbar">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                        <li class="nav-item"><a class="nav-link" href="Developer Academy.html">Home</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="Contact us.html">Contact</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="Aboutus.html">About</a></li>
+                                </ul>
+
+                                <!-- Search Bar -->
+                                <form action="search.html" method="get" style="margin-top: 30px; text-align: center;">
+                                        <input 
+                                        type="text" 
+                                        name="q" 
+                                        placeholder="Search the site..." 
+                                        style="
+                                        padding: 10px 15px;
+                                        width: 250px;
+                                        border: 2px solid #ccc;
+                                        border-radius: 8px;
+                                        font-size: 16px;
+                                        margin-right: 10px;"
+                                        />
+                                        <button 
+                                                type="submit" 
+                                                style="
+                                                padding: 10px 20px;
+                                                background-color: #007BFF;
+                                                color: white;
+                                                border: none;
+                                                border-radius: 8px;
+                                                font-size: 16px;
+                                                cursor: pointer;">
+                                                🔍 Search
+                                        </button>
+                                </form>
+
+
+                        </div>
+                </nav>
+
+                
+
+                <ul class="nav horizontal">
+                        <div class="left-links">
+                                <li><a href="#home">HTML</a></li>
+                                <li><a href="#news">CSS</a></li>
+                                <li><a href="#news">CSS+</a></li>
+                                <li><a href="#contact">JAVASCRIPT</a></li>
+                                <li><a href="#news">SQL</a></li>
+                                <li><a href="#news">PYTHON</a></li>
+                                <li><a href="#news">PHP</a></li>
+                                <li><a href="#news">BOOTSTRAP</a></li>
+                                <li><a href="#news">MYSQL</a></li>
+                                <li><a href="#news">C</a></li>
+                                <li><a href="#news">C+</a></li>
+                                <li><a href="#news">C++</a></li>
+                                <li><a href="#news">EXCEL</a></li>
+                                <li><a href="#news">DJANGO</a></li>
+                                <li><a href="#news">XML</a></li>
+                                <li><a href="#news">PANDAS</a></li>
+                                <li><a href="#news">JQUERY</a></li>
+                                <li><a href="#news">NUMPY</a></li>
+                                <li><a href="#news">ASP</a></li>
+                                <li><a href="#news">AI</a></li>
+                                <li><a href="#news">R</a></li>
+                                <li><a href="#news">GO</a></li>
+                                <li><a href="#news">KOTLIN</a></li>
+                                <li><a href="#news">SASS</a></li>
+                                <li><a href="#news">VUE</a></li>
+                                <li><a href="#news">SCIPY</a></li>
+                                <li><a href="#news">GIT</a></li>
+                                <li><a href="#news">DSA</a></li>
+                        </div>
+                        </ul>
+                
+                <h1>DEVELOPER ACADEMY FOR THE GIFTED.</h1>
+                <h4>Motto: To breed up Revolutionising Developers.</h4><br><br>
+                <h2><u>Welcome to Developer Academy for the Gifted</u></h2>
+                <div class="container my-4">
+                        <div class="row align-items-center">
+                                <div class="col-md-6">
+                                        <h3><u>Goal:</u> Develop, Innovate, Lead</h3>
+                                        <p>
+                                        We equip gifted learners with the tools to lead in a fast-paced digital world. Our hands-on, personalized approach ensures each student grows from potential to professional.
+                                        </p>
+                                </div>
+                                <div class="col-md-6">
+                                        <div class="p-3 bg-light rounded shadow-sm h-100 feature-box">
+                                                <img src="computer.jpg" alt="Developer Academy" class="img-fluid rounded shadow">
+                                        </div>
+                                </div>
+
+                        </div>
+                </div>
+
+                <p>At Developer Academy for the Gifted, we are more than just an educational institution, We are a launchpad for the next generation
+                of digital innovators. Founded with the vision of nurturing exceptional talent, our Academy is dedicated to molding young, passionate 
+                minds into tomorrow’s leading developers, engineers, and creators in the ever-evolving tech industry.<br>
+                Our programs are specially designed to cultivate excellence in every aspect of modern development. 
+                Whether your interest lies in web development, frontend and backend engineering, artificial intelligence, machine learning, or other cutting-edge fields of software 
+                and system development, we provide a rich, hands-on environment tailored to unlock your full potential.
+                What sets us apart is our focus on individual growth and mentorship. With small class sizes, expert instructors, and an immersive curriculum, every student receives
+                the personal attention and real-world experience necessary to thrive in a competitive digital landscape. Our graduates don’t just leave with knowledge—they leave with confidence, capability, and a passion to innovate.
+                Join us on a journey where creativity meets code, where curiosity is rewarded with mastery, and where gifted minds shape the future—one line of code at a time.</p><br>
+                <h2>✨<u>Why Choose Us?</u></h2>
+                <div class="container my-5">
+                        <div class="row text-center">
+                                        <div class="col-md-4 mb-4">
+                                                <div class="p-3 bg-light rounded shadow-sm h-100 feature-box">
+                                                        <h5>🌟 Personalized Learning</h5>
+                                                        <p>Each student receives tailored guidance to master coding at their own pace.</p>
+                                                </div>
+                                        </div>
+                                <div class="col-md-4 mb-4">
+                                        <div class="p-3 bg-light rounded shadow-sm h-100 feature-box">
+                                                <h5>🧠 Expert Mentors</h5>
+                                                <p>Our mentors have years of real-world development experience.</p>
+                                        </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                        <div class="p-3 bg-light rounded shadow-sm h-100 feature-box">
+                                                <h5>🚀 Career Acceleration</h5>
+                                                <p>Get job-ready with hands-on projects and internship support.</p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <p>At Developers Academy for the Gifted, we recognize that talent needs the right atmosphere to thrive. That’s why we’ve created a vibrant, inclusive, and forward-thinking learning environment 
+                        where creativity, critical thinking, and coding go hand in hand.
+                </p>        
+                <br><h2><u>What Makes Us Unique?</u></h2>
+                <div class="container my-5">
+                        <div class="row text-center">
+                                        <div class="col-md-4 mb-4">
+                                                <div class="p-3 bg-light rounded shadow-sm h-100 feature-box">
+                                                        <h5>🔹 Industry-Aligned Curriculum</h5>
+                                                        <p>Built with input from tech leaders and updated regularly.</p>
+                                                </div>
+                                        </div>
+                                <div class="col-md-4 mb-4">
+                                        <div class="p-3 bg-light rounded shadow-sm h-100 feature-box">
+                                                <h5>🔹 Project-Based Learning </h5>
+                                                <p>Students work on real-life applications and portfolios.</p>
+                                        </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                        <div class="p-3 bg-light rounded shadow-sm h-100 feature-box">
+                                                <h5>🔹 Expert Faculty </h5>
+                                                <p>Instructors with years of experience in full-stack development, AI, and more.</p>
+                                        </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                        <div class="p-3 bg-light rounded shadow-sm h-100 feature-box">
+                                                <h5>🔹 Career Launchpad </h5>
+                                                <p>Internship opportunities, career counseling, and job placement assistance.</p>
+                                        </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                        <div class="p-3 bg-light rounded shadow-sm h-100 feature-box">
+                                                <h5>🔹 Tech-Driven Facilities </h5>
+                                                <p>Fully equipped labs, remote access tools, and a modern coding environment.</p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                        
+                        <br>Join us and become part of a growing community that doesn’t just teach you to code—but teaches you how to think like a developer.</p>
+                        
+                        <section class="py-5 bg-light" id="testimonials">
+                        <div class="container">
+                                <h2 class="text-center mb-5">What Our Users Say</h2>
+                                <div class="row">
+                                        <div class="col-md-4 mb-4">
+                                                <div class="p-3 bg-light rounded shadow-sm h-100 feature-box">
+                                                        <p>"This platform transformed my learning journey! The courses are top-notch."</p>
+                                                        <h5 class="mt-3 mb-0">— Sarah M.</h5>
+                                                        <small class="text-muted">UI/UX Designer</small>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-4 mb-4">
+                                                <div class="p-3 bg-light rounded shadow-sm h-100 feature-box">
+                                                        <p>"I loved the interactive features and the responsive design. 10/10!"</p>
+                                                        <h5 class="mt-3 mb-0">— James L.</h5>
+                                                        <small class="text-muted">Frontend Developer</small>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-4 mb-4">
+                                                <div class="p-3 bg-light rounded shadow-sm h-100 feature-box">
+                                                        <p>"Clean interface, excellent content — perfect for learners of all levels."</p>
+                                                        <h5 class="mt-3 mb-0">— Amina K.</h5>
+                                                        <small class="text-muted">Data Analyst</small>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        </section>
+
+                        
+                        <footer class="footer bg-dark text-light py-4">
+                                <div class="container">
+                                <div class="row">
+                                <div class="col-md-6 contact-info">
+                                        <p><strong>Phone:</strong> <a class="text-light" href="tel:+15551234567">+1 (555) 123-4567</a></p>
+                                        <p><strong>Email:</strong> <a class="text-light" href="mailto:info@developerAcademygifted.org">info@developerAcademygifted.org</a></p>
+                                        <p>&copy; 2025 Developer Academy. All rights reserved.</p>
+                                        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+                                </div>
+                                <div class="col-md-6 social-links text-md-end">
+                                        <a class="text-light me-3" href="https://facebook.com/developerAcademygifted" target="_blank">Facebook</a><br>
+                                        <a class="text-light" href="https://twitter.com/devAcademygifted" target="_blank">Twitter</a>
+                                </div>
+                                </div>
+                                </div>
+                                </footer>
+                        
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+                        <!-- Auto-collapse after click -->
+                        <script>
+                                const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+                                const navbarCollapse = document.getElementById('mainNavbar');
+
+                                navLinks.forEach(link => {
+                                link.addEventListener('click', () => {
+                                const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+                                bsCollapse.hide();
+                                });
+                                });
+                        </script>
+        </body>
+</html>
+
+
+
+<!--
+✅ Step-by-Step Fix & Bootstrap Integration
+🔧 1. Fix Structure: Move <head> Above <link> and <style> (to fix in bootstrap and tell html bootstrap is coming in)
+Your <head> is currently in the wrong place — it starts after your <link> tag. It should be first in the <html> section.
+
+Here’s how it should be structured:
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+ (✅ Bootstrap CDN)
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+     (✅ Your Google Fonts)
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong|Ubuntu|LoraMerriweather|Open+Sans|Abril+Fatface|Poppins|Cinzel|Fauna+One|Oswald|Noto+Sans">
+
+     (✅ Your CSS)
+    <style>
+        /* ✅ (keep all your existing CSS here) */
+    </style>
+</head>
+<body>
+    (✅ Your body content goes here)
+
+    (✅ Bootstrap JS at end of body)
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>-->
+
+<!--✅ 2. You Can Now Start Using Bootstrap
+After including Bootstrap’s CDN (like above), you can begin using Bootstrap classes without removing any of your styles.
+
+For example, you can:
+
+Add spacing using mt-3, p-4, etc.
+
+Style buttons: class="btn btn-primary"
+
+Use layout tools like container, row, col, d-flex, etc.
+
+Improve responsiveness without custom media queries
+
+🧪 Example Upgrade Using Bootstrap
+Here’s a simple upgrade for your <footer> using Bootstrap grid layout:
+
+✅ Updated Footer Using Bootstrap:
+html
+Copy
+Edit
+<footer class="footer bg-dark text-light py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 contact-info">
+        <p><strong>Phone:</strong> <a class="text-light" href="tel:+15551234567">+1 (555) 123-4567</a></p>
+        <p><strong>Email:</strong> <a class="text-light" href="mailto:info@developerAcademygifted.org">info@developerAcademygifted.org</a></p>
+      </div>
+      <div class="col-md-6 social-links text-md-end">
+        <a class="text-light me-3" href="https://facebook.com/developerAcademygifted" target="_blank">Facebook</a>
+        <a class="text-light" href="https://twitter.com/devAcademygifted" target="_blank">Twitter</a>
+      </div>
+    </div>
+  </div>
+</footer>
+✅ This uses Bootstrap’s grid (row, col-md-6) and spacing classes (py-4, me-3, etc.).
+-->
+
+<!--3.✅ Step-by-Step Bootstrap Navbar Code-- to add a bootstrap navigation bar
+Replace your existing <ul class="navbar">...</ul> block with the following:
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+  <a class="navbar-brand fw-bold" href="Developer Academy.html">Developer Academy</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="mainNavbar">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item"><a class="nav-link" href="Developer Academy.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+      <li class="nav-item"><a class="nav-link" href="Contact us.html">Contact</a></li>
+      <li class="nav-item"><a class="nav-link" href="Aboutus.html">About</a></li>
+    </ul>
+
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
+      <button class="btn btn-primary" type="submit">Go</button>
+    </form>
+  </div>
+</nav>
+✅ What This Does:
+Feature	Description
+navbar-expand-lg => Makes navbar responsive (collapsible on small screens)
+navbar-toggler=> Button for mobile view (hamburger menu)
+collapse navbar-collapse=> Wraps the collapsible links
+me-auto, mb-2=> Bootstrap spacing classes for layout
+form-control, btn=> Bootstrap-styled search form and button
+
+📌 Don’t Forget
+Make sure you have the Bootstrap JS script right before </body>:
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+This enables the responsive collapse functionality.
+-->
+
+<!--4.✅ Recommended: Scrollable Bootstrap Nav Pills but for now am sticking with the old one.
+Replace your existing <ul class="nav horizontal">...</ul> block with this:
+
+<nav class="bg-secondary py-2" aria-label="Course menu">
+  <div class="d-flex overflow-auto gap-2 px-3">
+    <a class="btn btn-light btn-sm" href="#">HTML</a>
+    <a class="btn btn-light btn-sm" href="#">CSS</a>
+    <a class="btn btn-light btn-sm" href="#">CSS+</a>
+    <a class="btn btn-light btn-sm" href="#">JavaScript</a>
+    <a class="btn btn-light btn-sm" href="#">SQL</a>
+    <a class="btn btn-light btn-sm" href="#">Python</a>
+    <a class="btn btn-light btn-sm" href="#">PHP</a>
+    <a class="btn btn-light btn-sm" href="#">Bootstrap</a>
+    <a class="btn btn-light btn-sm" href="#">MySQL</a>
+    <a class="btn btn-light btn-sm" href="#">C</a>
+    <a class="btn btn-light btn-sm" href="#">C+</a>
+    <a class="btn btn-light btn-sm" href="#">C++</a>
+    <a class="btn btn-light btn-sm" href="#">Excel</a>
+    <a class="btn btn-light btn-sm" href="#">Django</a>
+    <a class="btn btn-light btn-sm" href="#">XML</a>
+    <a class="btn btn-light btn-sm" href="#">Pandas</a>
+    <a class="btn btn-light btn-sm" href="#">jQuery</a>
+    <a class="btn btn-light btn-sm" href="#">NumPy</a>
+    <a class="btn btn-light btn-sm" href="#">ASP</a>
+    <a class="btn btn-light btn-sm" href="#">AI</a>
+    <a class="btn btn-light btn-sm" href="#">R</a>
+    <a class="btn btn-light btn-sm" href="#">Go</a>
+    <a class="btn btn-light btn-sm" href="#">Kotlin</a>
+    <a class="btn btn-light btn-sm" href="#">SASS</a>
+    <a class="btn btn-light btn-sm" href="#">Vue</a>
+    <a class="btn btn-light btn-sm" href="#">SciPy</a>
+    <a class="btn btn-light btn-sm" href="#">Git</a>
+    <a class="btn btn-light btn-sm" href="#">DSA</a>
+  </div>
+</nav>
+✅ What This Does:
+Feature	Description
+d-flex overflow-auto=> Makes the nav scrollable horizontally on smaller screens
+btn btn-light btn-sm=> Bootstrap buttons for consistent size and style
+gap-2, px-3, py-2=> Clean spacing between items and padding for the container
+bg-secondary=> Gives a light gray background to the nav bar
+-->
+
+<!--✅5. It inserts grid for you making it suitable for which ever devises being used for it.
+✅ Step 1: Insert the Grid HTML
+Paste this right after your welcome heading, before the <p> paragraph:
+
+html
+Copy
+Edit
+<div class="container my-4">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h3>Develop. Innovate. Lead.</h3>
+      <p>
+        We equip gifted learners with the tools to lead in a fast-paced digital world. Our hands-on, personalized approach ensures each student grows from potential to professional.
+      </p>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="computer.jpg" alt="Developer Academy" class="img-fluid rounded shadow">
+    </div>
+  </div>
+</div>
+✅ Step 2: Explanation
+container: gives padding and centers the content.
+
+row: a horizontal group of columns.
+
+col-md-6: each side takes 6 of 12 slots (50%) on medium screens and up. On small screens, they stack automatically.
+
+img-fluid: makes the image scale nicely.
+
+rounded shadow: gives the image rounded corners and a soft shadow.
+
+You can replace "computer.jpg" with any other image you prefer.
+
+✅ Step 3: Save and Test
+Open your HTML file in a browser. You should see:
+
+A headline and paragraph on the left
+
+An image on the right
+
+On smaller screens, it should stack vertically
+-->
+
+
+<!--✅ 6. Add Auto-Close JavaScript to auto close nav bar after finish using it
+Now let’s make sure the mobile navbar menu collapses (closes) after a link is clicked.
+
+⬇️ Scroll to the very bottom of your HTML (just before </body>) and add this:
+
+(Auto-collapse after click)
+<script>
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  const navbarCollapse = document.getElementById('mainNavbar');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+      bsCollapse.hide();
+    });
+  });
+</script>
+✅ This code makes the navbar close itself when you click on any link (on smaller screens)-->
+
+<!--7. ✅ Insert This After <h2>✨<u>Why Choose Us?</u></h2> to make it in a box/container and make it float when you hover cusor on it.
+
+<div class="container my-5">
+  <div class="row text-center">
+    <div class="col-md-4 mb-4">
+      <div class="p-3 bg-light rounded shadow-sm h-100 feature-box">
+        <h5>🌟 Personalized Learning</h5>
+        <p>Each student receives tailored guidance to master coding at their own pace.</p>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="p-3 bg-light rounded shadow-sm h-100 feature-box">
+        <h5>🧠 Expert Mentors</h5>
+        <p>Our mentors have years of real-world development experience.</p>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="p-3 bg-light rounded shadow-sm h-100 feature-box">
+        <h5>🚀 Career Acceleration</h5>
+        <p>Get job-ready with hands-on projects and internship support.</p>
+      </div>
+    </div>
+  </div>
+</div>
+💡 What This Does:
+Uses .container and .row to start a grid section.
+
+Splits it into three columns (.col-md-4) for medium screens and above.
+
+Each column has padding (p-3), light background, shadow, and margin-bottom for spacing on mobile.-->
+
+<!--8. to make the box to hover and become big after bing clicked on it
+✅ Replace this in each column block:
+From this (inside each .col-md-4):
+
+html
+
+<div class="p-3 bg-light rounded shadow-sm h-100">
+
+To this:
+html
+
+<div class="p-3 bg-light rounded shadow-sm h-100 feature-box">
+✅ Then add this CSS to your <style> section:
+css
+
+.feature-box {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature-box:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+-->
+
+<!--9. to add a place where ppl can testify about the shool it is to be added just above the footer
+<section class="py-5 bg-light" id="testimonials">
+                        <div class="container">
+                                <h2 class="text-center mb-5">What Our Users Say</h2>
+                                <div class="row">
+                                        <div class="col-md-4 mb-4">
+                                                <div class="p-3 bg-light rounded shadow-sm h-100 feature-box">
+                                                        <p>"This platform transformed my learning journey! The courses are top-notch."</p>
+                                                        <h5 class="mt-3 mb-0">— Sarah M.</h5>
+                                                        <small class="text-muted">UI/UX Designer</small>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-4 mb-4">
+                                                <div class="p-3 bg-light rounded shadow-sm h-100 feature-box">
+                                                        <p>"I loved the interactive features and the responsive design. 10/10!"</p>
+                                                        <h5 class="mt-3 mb-0">— James L.</h5>
+                                                        <small class="text-muted">Frontend Developer</small>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-4 mb-4">
+                                                <div class="p-3 bg-light rounded shadow-sm h-100 feature-box">
+                                                        <p>"Clean interface, excellent content — perfect for learners of all levels."</p>
+                                                        <h5 class="mt-3 mb-0">— Amina K.</h5>
+                                                        <small class="text-muted">Data Analyst</small>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        </section>
+-->

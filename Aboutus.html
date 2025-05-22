@@ -1,0 +1,401 @@
+<html>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong|Ubuntu|LoraMerriweather|Open+Sans|Abril+Fatface|Poppins|Cinzel|Fauna+One|Oswald|Noto+Sans">
+        <head>
+                <!-- ✅ Bootstrap CSS -->
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+                <!-- ✅ Google Fonts -->
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong|Ubuntu|LoraMerriweather|Open+Sans|Abril+Fatface|Poppins|Cinzel|Fauna+One|Oswald|Noto+Sans">
+
+                <!-- ✅ Custom CSS -->
+            <style>
+                body {
+                                background-color: lightgrey;
+                                background-size: cover;         /* Scales image to cover entire background */
+                                background-repeat: no-repeat;   /* Prevents image from repeating */
+                                background-position: center;
+                                background-attachment: fixed;   /*keeps the image from moving as you are going up or down */
+                                backdrop-filter: blur(1.5px);
+                                font-weight: bolder;
+                                font-family: Poppins, sans-serif;
+                                text-shadow: 0px 0px 1px white ;
+                        }
+
+                        .search-form {
+                                margin: 0;
+                                padding: 8px;
+                                align-items:center;
+                                display: flex;
+                        }
+                        .search-form input[type="text"] {
+                                padding: 10px 40px;
+                                font-family: Noto Sans, serif;
+                                border: none;
+                                border-radius: 4px 0 0 4px black;
+                        }
+                        .search-form button {
+                                padding: 10px 25px;
+                                background-color: darkblue;
+                                border: none;
+                                color: white;
+                                border-radius: 4px 0 0 4px black;
+                                cursor: pointer;
+                        }
+                        
+                        .search-form button:hover {
+                                background-color: blue;
+                        }
+
+                        .navbar {
+                                list-style-type: circle;
+                                margin: 0;
+                                font-family: Cinzel, serif;
+                                padding: 8px;
+                                overflow:hidden;
+                                align-items: center;
+                                background-color: lightcyan;
+                                justify-content: space-between;
+                                display: flex;
+                        }
+
+                        .left-links, .righ-links {
+                                display: flex;
+                        }
+
+                        /* Menu items */
+                        .navbar li {
+                                flex: 0;
+                                list-style: none;
+                        }
+
+                        /* Menu links */
+                        .navbar li a {
+                                display: inline-block;
+                                color: black;
+                                text-align: center;
+                                padding: 08px 08px;
+                                text-decoration: none;
+                        }
+
+                        /* Active tab - green */
+                        .navbar li a.active {
+                                color: black;
+                        }
+
+                        .navbar li a:hover:not(.active) {
+                                background-color: darkblue;
+                        }
+
+                        /*list of courses*/
+                        .nav.horizontal {
+                                list-style-type: none;
+                                margin: 0;
+                                padding: 5px;
+                                font-family: Abril Fatface, serif;
+                                overflow:auto;
+                                align-items: left;
+                                background-color: grey;
+                                justify-content:space-between;
+                                display: flex;
+                        }
+                        /* Menu items */
+                        .nav.horizontal li {
+                                flex: 0;
+                                list-style: none;
+                        }
+
+                        /* Menu links */
+                        .nav.horizontal li a {
+                                display: inline-block;
+                                color: black;
+                                text-align: center;
+                                padding: 10px 10px;
+                                text-decoration: none;
+                        }
+
+                        /* Active tab - green */
+                        .nav.horizontal li a.active {
+                                color: black;
+                        }
+
+                        .nav.horizontal li a:hover:not(.active) {
+                                background-color: white;
+                        }
+
+                        h1 {
+                                font-family:Cinzel, serif;
+                                font-size: 40px;
+                                text-align: center;
+                                color: black;
+                                padding: 0px 0px 0px 0px ;
+                                text-shadow: 0.5px 0.5px 1px black ;
+                        }
+                        h2 {
+                                font: 10px;
+                                font-family: LoraMerriweather, sans-serif;
+                                margin: 0;
+                                padding: 0px;
+                                color: black;
+                                /*text-shadow: 1px 1px 2px darkblue, 0 0 2px midnightblue ;*/
+                                text-align: center;
+                        }
+                        h4 {
+                                font-size: 20px;
+                                font-family: Trirong, sans-serif;
+                                margin: auto;
+                                padding: 0 0 0 0 ;
+                                color: black;
+                                /*text-shadow: 1px 1px 2px darkblue, 0 0 2px midnightblue ;*/
+                                text-align: center;
+                        }
+                        a:link {
+                                text-decoration: none;
+                                color: blue;
+                        }
+                        a:visited {
+                                text-decoration: none;
+                                color: green;
+                        }
+                        a:hover {
+                                text-decoration: none;
+                                color: yellow;
+                        }
+                        a:active {
+                                text-decoration: none;
+                                color: red;
+                        }
+                        .footer {
+                                background-color: black;
+                                color: burlywood;
+                                padding: 20px 0;
+                                font-size: 14px;
+                                }
+
+                        .footer a {
+                                color: blue;
+                                text-decoration: none;
+                                margin-right: 15px;
+                        }
+
+                        .footer a:hover {
+                                color: #1e90ff;
+                        }
+
+                        .footer-container {
+                                max-width: 1000px;
+                                margin: 0 auto;
+                                padding: 0 20px;
+                                display: flex;
+                                justify-content: space-between;
+                                flex-wrap: wrap;
+                                color: lightblue;
+                        }
+
+                        .contact-info p {
+                                margin: 5px 0;
+                        }
+
+                        .social-links a {
+                                display: inline-block;
+                                margin: 5px 10px 5px 0;
+                        }
+
+                        .course-btn {
+                                transition: all 0.3s ease;
+                        }
+
+                        .course-btn:hover {
+                                background-color: #1e90ff;
+                                color: white;
+                        }
+
+                        .course-btn.active {
+                                background-color: #0d6efd;
+                                color: white;
+                                border: 1px solid #0a58ca;
+                        }
+
+                        .feature-box {
+                                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                        }
+                                
+                        .feature-box:hover {
+                                transform: scale(1.05) translateY(-5px);
+                                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                        }
+                        .feature-box img {
+                                transition: transform 0.3s ease;
+                        }
+
+                        .feature-box img:hover {
+                                transform: scale(1.05); /* Adjust the scale as you like */
+                        }
+            </style>
+        </head>
+        <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+                        <a class="navbar-brand fw-bold text-primary fs-4" href="Developer Academy.html">
+                                Developer Academy
+                        </a>
+
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="mainNavbar">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                        <li class="nav-item"><a class="nav-link" href="Developer Academy.html">Home</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="Contact us.html">Contact</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="Aboutus.html">About</a></li>
+                                </ul>
+
+                                <!-- Search Bar -->
+                                <form action="search.html" method="get" style="margin-top: 30px; text-align: center;">
+                                        <input 
+                                        type="text" 
+                                        name="q" 
+                                        placeholder="Search the site..." 
+                                        style="
+                                        padding: 10px 15px;
+                                        width: 250px;
+                                        border: 2px solid #ccc;
+                                        border-radius: 8px;
+                                        font-size: 16px;
+                                        margin-right: 10px;"
+                                        />
+                                        <button 
+                                                type="submit" 
+                                                style="
+                                                padding: 10px 20px;
+                                                background-color: #007BFF;
+                                                color: white;
+                                                border: none;
+                                                border-radius: 8px;
+                                                font-size: 16px;
+                                                cursor: pointer;">
+                                                🔍 Search
+                                        </button>
+                                </form>
+
+
+                        </div>
+                </nav>
+
+                        
+
+                <ul class="nav horizontal">
+                        <div class="left-links">
+                                <li><a href="#home">HTML</a></li>
+                                        <li><a href="#news">CSS</a></li>
+                                        <li><a href="#news">CSS+</a></li>
+                                        <li><a href="#contact">JAVASCRIPT</a></li>
+                                        <li><a href="#news">SQL</a></li>
+                                        <li><a href="#news">PYTHON</a></li>
+                                        <li><a href="#news">PHP</a></li>
+                                        <li><a href="#news">BOOTSTRAP</a></li>
+                                        <li><a href="#news">MYSQL</a></li>
+                                        <li><a href="#news">C</a></li>
+                                        <li><a href="#news">C+</a></li>
+                                        <li><a href="#news">C++</a></li>
+                                        <li><a href="#news">EXCEL</a></li>
+                                        <li><a href="#news">DJANGO</a></li>
+                                        <li><a href="#news">XML</a></li>
+                                        <li><a href="#news">PANDAS</a></li>
+                                        <li><a href="#news">JQUERY</a></li>
+                                        <li><a href="#news">NUMPY</a></li>
+                                        <li><a href="#news">ASP</a></li>
+                                        <li><a href="#news">AI</a></li>
+                                        <li><a href="#news">R</a></li>
+                                        <li><a href="#news">GO</a></li>
+                                        <li><a href="#news">KOTLIN</a></li>
+                                        <li><a href="#news">SASS</a></li>
+                                        <li><a href="#news">VUE</a></li>
+                                        <li><a href="#news">SCIPY</a></li>
+                                        <li><a href="#news">GIT</a></li>
+                                        <li><a href="#news">DSA</a></li>
+                                </div>
+                        </ul>                
+                        <p>
+                        <h1>🌟<u>About Us</u></h1>
+                        Developers Academy for the Gifted is a premier institution established with a mission to equip future tech leaders with the knowledge, skills, and mindset to drive innovation in the digital world. For over two decades, we’ve nurtured gifted students into becoming professional web developers, frontend and backend engineers, AI creators, and pioneers in various fields of software development.
+
+                        Our curriculum blends theory with hands-on practice, focusing on real-world projects, collaborative learning, and the use of cutting-edge technologies. We believe that every gifted mind deserves the right environment to flourish, and that's why we emphasize small class sizes, personalized mentorship, and a growth-driven approach.
+                        <div class="container my-5">
+                                <div class="row text-center">
+                                                <div class="col-md-4 mb-4">
+                                                        <div class="p-3 bg-light rounded shadow-sm h-100 feature-box">
+                                                                <h5>Our Core Values:</h5>
+                                                                <p><b>Innovation:</b> Encouraging new ideas and creative problem-solving.<br>
+
+                                                                <b>Excellence:</b> Striving for the highest standards in learning and performance.<br>
+
+                                                                <b>Discipline:</b> Building strong work ethics and focus in our learners.<br>
+
+                                                                <b>Collaboration:</b> Fostering teamwork through group projects and peer support.<br>
+
+                                                                <b>Leadership:</b> Empowering students to take initiative and lead in the tech space.<br>
+
+                                                                With alumni now working at top tech companies and leading startups globally, our impact continues to grow. We don’t just teach development—we shape the developers of the future.<br></p>
+                                                        </div>
+                                                </div>
+                                        <div class="col-md-4 mb-4">
+                                                <div class="p-3 bg-light rounded shadow-sm h-100 feature-box">
+                                                        <h5>🔭<u>Our Vision</u></h5>
+                                                        <p>To be the leading force in producing future-ready developers who not only adapt to change—but drive it.</p>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-4 mb-4">
+                                                <div class="p-3 bg-light rounded shadow-sm h-100 feature-box">
+                                                        <h5>🎯<u>Our Mission</u></h5>
+                                                        <p>To provide gifted individuals with high-quality, immersive tech education that empowers them to lead in web development, software engineering, artificial intelligence, and other key areas of the digital economy.</p>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-4 mb-4">
+                                                <div class="p-3 bg-light rounded shadow-sm h-100 feature-box">
+                                                        <h5>🏆<u>Achievements</u></h5>
+                                                        <p> ✅ Over 2,000 graduates working globally in companies like Google, Microsoft, and Amazon.<br>
+
+                                                        ✅ Top-rated coding bootcamp three years in a row by regional educational boards.<br>
+
+                                                        ✅ Award-winning student projects featured in innovation expos and hackathons.<br>
+
+                                                        ✅ Strong Alumni Network providing mentorship, internships, and funding opportunities.<br></p>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        
+                        <footer class="footer">
+                        <div class="footer-container">
+                                        <div class="contact-info">
+                                                        <p><strong>Phone:</strong> <a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+                                                        <p><strong>Email:</strong> <a href="mailto:info@developerAcademygifted.org">info@developerAcademygifted.org</a></p>
+                                                        <p>&copy; 2025 Developer Academy. All rights reserved.</p>
+                                                        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+                                        </div>
+                                        <div class="social-links">
+                                                        <a href="https://facebook.com/developerAcademygifted" target="_blank">Facebook</a>
+                                                        <a href="https://twitter.com/devAcademygifted" target="_blank">Twitter</a>
+                                        </div>
+                        </div>
+                        </footer>  
+                        <!-- Auto-collapse after click -->
+                        <script>
+                                const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+                                const navbarCollapse = document.getElementById('mainNavbar');
+
+                                navLinks.forEach(link => {
+                                link.addEventListener('click', () => {
+                                const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+                                bsCollapse.hide();
+                                });
+                                });
+                        </script>
+                        
+                        <!-- ✅ Bootstrap Bundle with Popper.js -->
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        </body>
+</html>
