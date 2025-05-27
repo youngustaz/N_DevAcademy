@@ -6,108 +6,223 @@
   <title>Developer Academy for the Gifted</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
-    /* === Animation Keyframes === */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    body {
+      background-color: lightgrey;
+      background-size: cover;         /* Scales image to cover entire background */
+      background-repeat: no-repeat;   /* Prevents image from repeating */
+      background-position: center;
+      background-attachment: fixed;   /*keeps the image from moving as you are going up or down */
+      backdrop-filter: blur(1.5px);
+      font-weight: bolder;
+      font-family: Poppins, sans-serif;
+      text-shadow: 0px 0px 1px white ;      
     }
-    @keyframes slideUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .navbar-search {
+      margin: 0;
+      padding: 8px;
+      align-items:center;
+      display: flex;
     }
+    .navbar-search input[type="text"] {
+      padding: 10px 40px;
+      font-family: Noto Sans, serif;
+      border: none;
+      border-radius: 4px 0 0 4px black;                 
+    }
+    .navbar-search button {
+    padding: 10px 25px;
+    background-color: darkblue;
+    border: none;
+    color: white;
+    border-radius: 4px 0 0 4px black;
+    cursor: pointer;
+  }
+  .navbar-search button:hover {
+    background-color: blue;
+  }
 
-    /* === General fade in on page load === */
-    main {
-      animation: fadeIn 1s ease forwards;
-      opacity: 0; /* initial */
-    }
+  .navbar {
+    list-style-type: circle;
+    margin: 0;
+    font-family: Cinzel, serif;
+    padding: 8px;
+    overflow:hidden;
+    align-items: center;
+    background-color: lightcyan;
+    justify-content: space-between;
+    display: flex;
+  }
+  .left-links, .righ-links {
+    display: flex;
+  }
+  /* Menu items */
+  .navbar li {
+    flex: 0;
+    list-style: none;
+  }
 
-    /* Horizontal nav styling + animation */
-    .horizontal-nav {
-      overflow-x: auto;
-      white-space: nowrap;
-      padding: 0.5rem 1rem;
-      background-color: #f8f9fa;
-      border-bottom: 1px solid #ddd;
-      animation: fadeIn 1.5s ease forwards;
-      opacity: 0;
-    }
-    .horizontal-nav a {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      color: #0d6efd;
-      text-decoration: none;
-      font-weight: 600;
-      white-space: nowrap;
-      transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
-      border-radius: 0.375rem;
-      margin-right: 0.5rem;
-      will-change: transform, color;
-    }
-    .horizontal-nav a:hover,
-    .horizontal-nav a:focus {
-      color: #0a58ca;
-      transform: scale(1.1);
-      text-shadow: 0 0 8px #0d6efd;
-      outline: none;
-    }
+  /* Menu links */
+  .navbar li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 08px 08px;
+    text-decoration: none;
+  }
 
-    /* Feature boxes slide-up animation with delay */
-    .feature-box {
-      opacity: 0;
-      animation: slideUp 0.8s ease forwards;
-    }
-    /* Staggered animation delays for each box */
-    .feature-box:nth-child(1) { animation-delay: 0.2s; }
-    .feature-box:nth-child(2) { animation-delay: 0.4s; }
-    .feature-box:nth-child(3) { animation-delay: 0.6s; }
-    .feature-box:nth-child(4) { animation-delay: 0.8s; }
-    .feature-box:nth-child(5) { animation-delay: 1s; }
-    .feature-box:nth-child(6) { animation-delay: 1.2s; }
+  /* Active tab - green */
+  .navbar li a.active {
+    color: black;
+  }
 
-    /* Search button hover animation */
-    form.navbar-search button {
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-    form.navbar-search button:hover,
-    form.navbar-search button:focus {
-      background-color: #0a58ca;
-      box-shadow: 0 0 8px #0d6efd;
-      outline: none;
-    }
+  .navbar li a:hover:not(.active) {
+    background-color: darkblue;
+  }
 
-    /* Footer fade in on scroll */
-    footer.footer {
-      opacity: 0;
-      transition: opacity 1s ease;
-    }
-    footer.footer.visible {
-      opacity: 1;
-    }
+  /*list of courses*/
+  .horizontal-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
+    font-family: Abril Fatface, serif;
+    overflow:auto;
+    align-items: left;
+    background-color: grey;
+    justify-content:space-between;
+    display: flex;
+  }
+  /* Menu items */
+  .horizontal-nav li {
+    flex: 0;
+    list-style: none;
+  }
 
-    /* Responsive search form tweaks */
-    @media (max-width: 575.98px) {
-      form.navbar-search {
-        margin-top: 0.5rem;
-        width: 100%;
-        display: flex;
-        flex-wrap: nowrap;
-      }
-      form.navbar-search input[type="text"] {
-        flex: 1 1 auto;
-        margin-right: 0.5rem;
-      }
-      form.navbar-search button {
-        flex: 0 0 auto;
-        width: auto;
-      }
-    }
+  /* Menu links */
+  .horizontal-nav li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 10px 10px;
+    text-decoration: none;
+  }
+
+  /* Active tab - green */
+  .horizontal-nav li a.active {
+    color: black;
+  }
+
+  .horizontal-nav li a:hover:not(.active) {
+    background-color: white;
+  }
+
+  h1 {
+    font-family:Cinzel, serif;
+    font-size: 40px;
+    text-align: center;
+    color: black;
+    padding: 0px 0px 0px 0px ;
+    text-shadow: 0.5px 0.5px 1px black ;
+  }
+  h2 {
+    font: 10px;
+    font-family: LoraMerriweather, sans-serif;
+    margin: 0;
+    padding: 0px;
+    color: black;
+    /*text-shadow: 1px 1px 2px darkblue, 0 0 2px midnightblue ;*/
+    text-align: center;
+  }
+  h4 {
+    font-size: 20px;
+    font-family: Trirong, sans-serif;
+    margin: auto;
+    padding: 0 0 0 0 ;
+    color: black;
+    /*text-shadow: 1px 1px 2px darkblue, 0 0 2px midnightblue ;*/
+    text-align: center;
+  }
+  a:link {
+    text-decoration: none;
+    color: blue;
+  }
+  a:visited {
+    text-decoration: none;
+    color: green;
+  }
+  a:hover {
+    text-decoration: none;
+    color: yellow;
+  }
+  a:active {
+    text-decoration: none;
+    color: red;
+  }
+  .footer {
+    background-color: black;
+    color: burlywood;
+    padding: 20px 0;
+    font-size: 14px;
+  }
+
+  .footer a {
+    color: blue;
+    text-decoration: none;
+    margin-right: 15px;
+  }
+
+  .footer a:hover {
+    color: #1e90ff;
+  }
+
+  .footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: lightblue;
+  }
+
+  .contact-info p {
+    margin: 5px 0;
+  }
+
+  .social-links a {
+    display: inline-block;
+    margin: 5px 10px 5px 0;
+  }
+
+  .course-btn {
+    transition: all 0.3s ease;
+  }
+
+  .course-btn:hover {
+    background-color: #1e90ff;
+    color: white;
+  }
+
+  .course-btn.active {
+    background-color: #0d6efd;
+    color: white;
+    border: 1px solid #0a58ca;
+  }
+
+  .feature-box {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+          
+  .feature-box:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  .feature-box img {
+    transition: transform 0.3s ease;
+  }
+
+  .feature-box img:hover {
+    transform: scale(1.05); /* Adjust the scale as you like */
+  }
   </style>
 </head>
 <body>
@@ -137,20 +252,29 @@
       </ul>
 
       <!-- Responsive Search Bar -->
-      <form action="search.html" method="get" class="d-flex navbar-search" role="search" style="margin-top: 0;">
+      <form action="search.html" method="get" style="margin-top: 30px; text-align: center;">
         <input
-          type="search"
-          name="q"
-          class="form-control me-2"
-          placeholder="Search the site..."
-          aria-label="Search"
-          style="min-width: 180px;"
-          required
-        />
+          type="text" 
+          name="q" 
+          placeholder="Search the site..." 
+          style="
+          padding: 10px 15px;
+          width: 250px;
+          border: 2px solid #ccc;
+          border-radius: 8px;
+          font-size: 16px;
+          margin-right: 10px;"
+          />
         <button
-          type="submit"
-          class="btn btn-primary"
-        >
+          type="submit" 
+          style="
+          padding: 10px 20px;
+          background-color: #007BFF;
+          color: white;
+          border: none;
+          border-radius: 8px;
+          font-size: 16px;
+          cursor: pointer;">
           🔍 Search
         </button>
       </form>
@@ -158,36 +282,38 @@
   </nav>
 
   <!-- Horizontal course menu - scrollable -->
-  <nav class="horizontal-nav" aria-label="Course categories">
-    <a href="#home">HTML</a>
-    <a href="#news">CSS</a>
-    <a href="#news">CSS+</a>
-    <a href="#contact">JAVASCRIPT</a>
-    <a href="#news">SQL</a>
-    <a href="#news">PYTHON</a>
-    <a href="#news">PHP</a>
-    <a href="#news">BOOTSTRAP</a>
-    <a href="#news">MYSQL</a>
-    <a href="#news">C</a>
-    <a href="#news">C+</a>
-    <a href="#news">C++</a>
-    <a href="#news">EXCEL</a>
-    <a href="#news">DJANGO</a>
-    <a href="#news">XML</a>
-    <a href="#news">PANDAS</a>
-    <a href="#news">JQUERY</a>
-    <a href="#news">NUMPY</a>
-    <a href="#news">ASP</a>
-    <a href="#news">AI</a>
-    <a href="#news">R</a>
-    <a href="#news">GO</a>
-    <a href="#news">KOTLIN</a>
-    <a href="#news">SASS</a>
-    <a href="#news">VUE</a>
-    <a href="#news">SCIPY</a>
-    <a href="#news">GIT</a>
-    <a href="#news">DSA</a>
-  </nav>
+  <ul class="horizontal-nav">
+    <div class="left-links">
+      <li><a href="#home">HTML</a></li>
+      <li><a href="#news">CSS</a></li>
+      <li><a href="#news">CSS+</a></li>
+      <li><a href="#contact">JAVASCRIPT</a></li>
+      <li><a href="#news">SQL</a></li>
+      <li><a href="#news">PYTHON</a></li>
+      <li><a href="#news">PHP</a></li>
+      <li><a href="#news">BOOTSTRAP</a></li>
+      <li><a href="#news">MYSQL</a></li>
+      <li><a href="#news">C</a></li>
+      <li><a href="#news">C+</a></li>
+      <li><a href="#news">C++</a></li>
+      <li><a href="#news">EXCEL</a></li>
+      <li><a href="#news">DJANGO</a></li>
+      <li><a href="#news">XML</a></li>
+      <li><a href="#news">PANDAS</a></li>
+      <li><a href="#news">JQUERY</a></li>
+      <li><a href="#news">NUMPY</a></li>
+      <li><a href="#news">ASP</a></li>
+      <li><a href="#news">AI</a></li>
+      <li><a href="#news">R</a></li>
+      <li><a href="#news">GO</a></li>
+      <li><a href="#news">KOTLIN</a></li>
+      <li><a href="#news">SASS</a></li>
+      <li><a href="#news">VUE</a></li>
+      <li><a href="#news">SCIPY</a></li>
+      <li><a href="#news">GIT</a></li>
+      <li><a href="#news">DSA</a></li>
+    </div>
+  </ul>
 
   <main class="container my-4">
     <h1>DEVELOPER ACADEMY FOR THE GIFTED.</h1>
